@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"strconv"
+	// "strconv"
 
 	"github.com/joho/godotenv"
 )
@@ -33,7 +33,7 @@ func main() {
 	imagesDownloaded := []string{}
 
 	for i, imageURL := range imagesFound {
-		imageOutput := albumDir + "/" + leftPad(strconv.Itoa(i), "0", digitsLen(len(imagesFound))-1) + ".jpg"
+		imageOutput := albumDir + "/" + fmt.Sprintf("%03d", i) + ".jpg"
 		fmt.Println(imageURL + " -> " + imageOutput)
 		imagesDownloaded = append(imagesDownloaded, imageOutput)
 
